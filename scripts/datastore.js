@@ -1,12 +1,12 @@
 (function(window){
-  'user strict';
+  'use strict';
   var App = window.App || {};
 
-  function datastore(){
-    //console.log('running the Datastore function');
+  function DataStore(){
     this.data = {};
   };
 
+  //accepts a key and and adds a value
   DataStore.prototype.add = function(key,val){
     this.data[key] = val;
   };
@@ -20,10 +20,12 @@
   };
 
   DataStore.prototype.remove = function (key){
+
+    //removes a key/value pair
     delete this.data[key];
   };
 
-  App.Datastore = DataStore;
+  App.DataStore = DataStore;
   window.App = App;
-  //code will go here
+
 })(window);
